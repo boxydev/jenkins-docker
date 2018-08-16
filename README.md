@@ -4,8 +4,7 @@ We need to run Jenkins "portable" in a docker container. It work everywhere wher
 
 ## Usage
 
-Install docker and create dot env file from dot env dist file.  
-You need to configure DOCKER_BIN point to your docker bin location
+Install docker and create dot env file from dot env dist file.
 
 ```
 cp .env.dist .env

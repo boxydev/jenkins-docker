@@ -9,6 +9,10 @@ RUN curl -sSL https://download.docker.com/linux/static/stable/x86_64/docker-${DO
     && cp /tmp/docker/docker /usr/local/bin \
     && rm -rf /tmp/docker
 
+RUN apt-get update \
+    && apt-get install -y \
+    php
+
 USER jenkins
 
 COPY plugins.txt /usr/share/jenkins/ref/
