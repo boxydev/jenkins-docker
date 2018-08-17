@@ -25,8 +25,10 @@ docker-compose stop
 
 # Backup (remove $ on fish)
 mkdir -p ~/backups/jenkins
-docker run -v jenkins_home:/volume --rm loomchild/volume-backup backup - > ~/backups/jenkins/$(date '+%Y-%m-%d-%Hh%Mm%S').tar.bz2
+docker run -v jenkins_home:/volume --rm loomchild/volume-backup backup - \
+    > ~/backups/jenkins/$(date '+%Y-%m-%d-%Hh%Mm%S').tar.bz2
 
 # Restore (Please be sure that file exists)
-cat ~/backups/jenkins/2018-08-17-23h58m36.tar.bz2 | docker run -i -v jenkins_home:/volume --rm loomchild/volume-backup restore -
+cat ~/backups/jenkins/2018-08-17-23h58m36.tar.bz2 | \
+    docker run -i -v jenkins_home:/volume --rm loomchild/volume-backup restore -
 ```
