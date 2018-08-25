@@ -11,7 +11,16 @@ RUN curl -sSL https://download.docker.com/linux/static/stable/x86_64/docker-${DO
 
 RUN apt-get update \
     && apt-get install -y \
-    php
+    apt-transport-https \
+    && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
+    && echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list
+
+RUN apt-get update \
+    && apt-get install -y \
+    php-cli
+
+RUN rm -rf /var/lib/apt/lists/* \
+  apt-get clean
 
 USER jenkins
 
