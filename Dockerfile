@@ -8,6 +8,7 @@ RUN curl -sSL https://download.docker.com/linux/static/stable/x86_64/docker-${DO
     | tar -zxC /tmp/ \
     && cp /tmp/docker/docker /usr/local/bin \
     && rm -rf /tmp/docker
+RUN groupadd -g 999 docker && usermod -aG docker jenkins
 
 RUN apt-get update \
     && apt-get install -y \
