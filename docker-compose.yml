@@ -13,7 +13,7 @@ services:
     restart: always
 
   socat:
-    build: socat
+    image: alpine/socat
     command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
     volumes:
         - /var/run/docker.sock:/var/run/docker.sock
