@@ -3,7 +3,7 @@ MAINTAINER Matthieu Mota <matthieumota@gmail.com>
 
 USER root
 
-ARG DOCKER_VERSION="18.06.0"
+ARG DOCKER_VERSION="18.06.1"
 RUN curl -sSL https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}-ce.tgz \
     | tar -zxC /tmp/ \
     && cp /tmp/docker/docker /usr/local/bin \
