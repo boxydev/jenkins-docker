@@ -1,4 +1,4 @@
-# Jenkins in Docker
+# Jenkins Docker
 
 We need to run Jenkins "portable" in a docker container. It work everywhere where Docker is present, on my Macbook Pro or a cloud instance. Great, I can run CI when I need it ! But we need too to run container in our pipelines's projects. Oh inception ! We can run Docker in Docker too. We use socat to manage Docker on Mac OS because we cannot share socket easily like Linux.
 
